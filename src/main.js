@@ -1,0 +1,17 @@
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router/index.js";
+import "./assets/main.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import { createPinia } from "pinia";
+import "vue-loading-overlay/dist/css/index.css";
+import { LoadingPlugin } from "vue-loading-overlay";
+import "vue3-carousel/carousel.css";
+import "vue3-toastify/dist/index.css";
+import "sweetalert2/dist/sweetalert2.min.css";
+const app = createApp(App);
+const pinia = createPinia();
+app.use(router);
+app.use(pinia);
+app.use(LoadingPlugin);
+app.mount("#app");

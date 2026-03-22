@@ -1,0 +1,8 @@
+@import "tailwindcss";
+/* import Flowbite Vue styles */
+@import "flowbite-vue/index.css";
+
+
+body {
+    font-family: "Exo", sans-serif;
+}
