@@ -153,14 +153,14 @@
       </div>
     </div>
   </div>
-  <!-- Phone VIEW -->
-  <div v-if="isMobileMenuOpen" @click="isMobileMenuOpen = false" class="fixed inset-0 bg-black/50 z-50 lg:hidden transition-opacity duration-300 opacity-100">
+  <!-- Phone VIEW -->lg:hidden
+  <div v-if="isMobileMenuOpen" @click="isMobileMenuOpen = false" class="fixed inset-0 bg-black/50 z-50  transition-opacity duration-300 opacity-100">
     <div @click.stop
       class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transition-transform duration-300 overflow-y-auto translate-x-0">
       <div class="flex items-center justify-between p-4 border-b border-gray-100 bg-gray-50/50">
         <img alt="FreshCart" loading="lazy" width="160" height="31" decoding="async" data-nimg="1" class="h-8 w-auto"
           style="color:transparent" src="/public/images/freshcart-logo.49f1b44d.svg">
-        <button @click="isMobileMenueOpen = false"
+        <button @click="isMobileMenuOpen = false"
           class="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors">
           <i class="fa-solid fa-xmark text-gray-600"></i>
         </button>
@@ -258,7 +258,7 @@ import { onBeforeUnmount, onMounted, ref } from 'vue';
 const authStore = useAuthStore()
 const cartStore = useCartStore()
 const wishlist = useWishlistStore()
-const isMobileMenuOpen=ref(true)
+const isMobileMenuOpen=ref(false)
 const isOpen = ref(false)
 const dropdownRef = ref(null)
 function handelClickUser(event) {
