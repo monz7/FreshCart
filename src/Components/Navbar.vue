@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white">
-    <div class="container mx-auto px-20">
+    <div class="container mx-auto px-4">
       <div class="flex items-center justify-between h-16  gap-4 lg:gap-8">
         <a href="#" class="shrink-0">
           <img src="/public/images/freshcart-logo.49f1b44d.svg" alt="FreshCart Logo" class="h-6 lg:h-8 w-auto">
@@ -128,11 +128,11 @@
                     class="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:text-green-600 hover:bg-green-50 transition-colors">
                     <i class="fa-regular fa-heart w-4 text-gray-400"></i>My Wishlist
                   </RouterLink>
-                  <RouterLink to=""
+                  <RouterLink :to="{ name: 'address' }"
                     class="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:text-green-600 hover:bg-green-50 transition-colors">
                     <i class="fa-solid fa-address-book w-4 text-gray-400"></i>Addresses
                   </RouterLink>
-                  <RouterLink to=""
+                  <RouterLink :to="{ name: 'setting' }"
                     class="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:text-green-600 hover:bg-green-50 transition-colors">
                     <i class="fa-solid fa-gear w-4 text-gray-400"></i>Settings
                   </RouterLink>

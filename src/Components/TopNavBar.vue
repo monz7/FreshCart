@@ -1,6 +1,6 @@
 <template>
   <div class=" lg:block text-sm border-b border-gray-100">
-    <div class="container mx-auto px-20">
+    <div class="container mx-auto px-4">
       <div class="flex justify-between items-center h-10">
         <div class="flex items-center gap-6 text-gray-500 ">
           <span class="flex items-center gap-2"><i class="fa-solid fa-truck text-green-600 text-sm"></i>
