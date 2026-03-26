@@ -26,8 +26,8 @@
               </RouterLink>
               <!-- CATEGORIES -->
               <div class="relative group">
-                <RouterLink to="" class="text-gray-700 hover:text-green-600 transition-colors font-medium py-2">Categories<i
-                    class="fa-solid fa-chevron-down transition-transform group-hover:rotate-180"></i>
+                <RouterLink to="" class="text-gray-700 hover:text-green-600 transition-colors font-medium py-2">
+                  Categories<i class="fa-solid fa-chevron-down transition-transform group-hover:rotate-180"></i>
                 </RouterLink>
                 <div
                   class="absolute top-full left-0 pt-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
@@ -87,7 +87,7 @@
             <i class="fa-solid fa-cart-shopping text-lg text-gray-500 group-hover:text-green-600 transition-colors"></i>
           </RouterLink>
           <!-- Dropdown -->
-          <div class="relative" ref="dropdownRef">
+          <div class="hidden lg:block relative" ref="dropdownRef">
             <button @click="toggleMenu" v-if="authStore.isLoggedIn" to="/"
               class="rounded-full p-2.5 hover:bg-gray-100 transition-colors group">
               <i
@@ -124,7 +124,7 @@
                     class="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:text-green-600 hover:bg-green-50 transition-colors">
                     <i class="fa-solid fa-box-open w-4 text-gray-400"></i>My Orders
                   </RouterLink>
-                  <RouterLink to="/wishlist"
+                  <RouterLink to="/"
                     class="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:text-green-600 hover:bg-green-50 transition-colors">
                     <i class="fa-regular fa-heart w-4 text-gray-400"></i>My Wishlist
                   </RouterLink>
@@ -139,14 +139,114 @@
                 </ul>
               </div>
               <div class="border-t border-gray-100 py-2">
-                <button  @click="authStore.loggout"
+                <button @click="authStore.loggout"
                   class="flex items-center gap-3 px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 transition-colors w-full text-left">
                   <i class="fa-solid fa-right-from-bracket text-xs"></i>Sign Out</button>
               </div>
             </div>
           </div>
+          <button @click="isMobileMenuOpen = true"
+            class="lg:hidden ml-1 w-10 h-10 rounded-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center transition-colors">
+            <i class="fa-solid fa-bars"></i>
+          </button>
         </div>
       </div>
+    </div>
+  </div>
+  <!-- Phone VIEW -->
+  <div v-if="isMobileMenuOpen" @click="isMobileMenuOpen = false" class="fixed inset-0 bg-black/50 z-50 lg:hidden transition-opacity duration-300 opacity-100">
+    <div @click.stop
+      class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transition-transform duration-300 overflow-y-auto translate-x-0">
+      <div class="flex items-center justify-between p-4 border-b border-gray-100 bg-gray-50/50">
+        <img alt="FreshCart" loading="lazy" width="160" height="31" decoding="async" data-nimg="1" class="h-8 w-auto"
+          style="color:transparent" src="/public/images/freshcart-logo.49f1b44d.svg">
+        <button @click="isMobileMenueOpen = false"
+          class="w-9 h-9 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-xmark text-gray-600"></i>
+        </button>
+      </div>
+      <form class="p-4 border-b border-gray-100">
+        <div class="relative">
+          <input type="text" placeholder="Search products..."
+            class="w-full px-4 py-3 pr-12 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 text-sm"
+            value="">
+          <button type="submit"
+            class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-green-600 text-white flex items-center justify-center">
+            <i class="fa-solid fa-magnifying-glass text-sm"></i>
+          </button>
+        </div>
+      </form>
+      <nav class="p-4">
+        <div class="space-y-1">
+          <RouterLink to="/" @click="isMobileMenuOpen = false"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 transition-colors">
+            Home</RouterLink>
+          <RouterLink to="/shop" @click="isMobileMenuOpen = false"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 transition-colors">
+            Shop
+          </RouterLink>
+          <RouterLink to="/categories" @click="isMobileMenuOpen = false"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 transition-colors">
+            Categories</RouterLink>
+          <RouterLink to="/brands" @click="isMobileMenuOpen = false"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-green-600 hover:bg-green-50 transition-colors">
+            Brands
+          </RouterLink>
+        </div>
+      </nav>
+      <div class="mx-4 border-t border-gray-100"></div>
+      <div class="p-4 space-y-1">
+        <RouterLink to="/wishlist"
+          class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-green-50 transition-colors">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-red-50 flex items-center justify-center">
+              <i class="fa-regular fa-heart text-red-500"></i>
+            </div>
+            <span class="font-medium text-gray-700">Wishlist</span>
+          </div>
+          <span v-if="wishlist.wishlistCount > 0"
+            class="bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">{{ wishlist.wishlistCount }}</span>
+        </RouterLink>
+        <RouterLink class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-green-50 transition-colors"
+          to="/CartShop">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-green-50 flex items-center justify-center">
+              <i class="fa-solid fa-cart-shopping text-green-600"></i>
+            </div>
+            <span class="font-medium text-gray-700">Cart</span>
+          </div>
+          <span v-if="cartStore.numOfCartItems > 0"
+            class="bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">{{ cartStore.numOfCartItems
+            }}</span>
+        </RouterLink>
+      </div>
+      <div class="mx-4 border-t border-gray-100"></div>
+      <div class="p-4 space-y-1"><a
+          class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-green-50 transition-colors" href="/profile">
+          <div class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center">
+            <i class="fa-regular fa-user text-gray-500"></i>
+          </div>
+          <span class="font-medium text-gray-700">{{ authStore.user?.name }}</span>
+        </a>
+        <button @click="authStore.loggout"
+          class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 transition-colors w-full text-left">
+          <div class="w-9 h-9 rounded-full bg-red-50 flex items-center justify-center">
+            <i class="fa-solid fa-right-from-bracket  text-red-500"></i>
+          </div>
+          <span class="font-medium text-red-600">Sign Out</span>
+        </button>
+      </div>
+      <RouterLink
+        class="mx-4 mt-2 p-4 rounded-xl bg-gray-50 border border-gray-100 flex items-center gap-3 hover:bg-green-50 transition-colors"
+        to="">
+        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+          <i class="fa-solid fa-headset text-green-600"></i>
+        </div>
+        <div>
+          <div class="text-sm font-semibold text-gray-700">Need Help?</div>
+          <div class="text-sm text-green-600">Contact Support</div>
+        </div>
+      </RouterLink>
     </div>
   </div>
 </template>
@@ -158,9 +258,9 @@ import { onBeforeUnmount, onMounted, ref } from 'vue';
 const authStore = useAuthStore()
 const cartStore = useCartStore()
 const wishlist = useWishlistStore()
-
+const isMobileMenuOpen=ref(true)
 const isOpen = ref(false)
-const dropdownRef =ref(null)
+const dropdownRef = ref(null)
 function handelClickUser(event) {
   if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
     isOpen.value = false;

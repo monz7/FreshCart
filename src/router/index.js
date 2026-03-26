@@ -43,7 +43,7 @@ const routes = [
       },
       {
         path: "contact",
-        name: "contacus",
+        name: "contact",
         component: ContactUs,
       },
       {
@@ -58,7 +58,7 @@ const routes = [
         component: Shop,
       },
       {
-        path: "/categories/:name",
+        path: "categories",
         name: "categories",
         component: Allcategories,
       },
