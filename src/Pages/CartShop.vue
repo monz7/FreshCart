@@ -37,16 +37,20 @@
                 <div class="flex flex-wrap justify-center gap-2">
                     <RouterLink
                         class="px-4 py-2 bg-gray-50 hover:bg-green-50 hover:text-green-600 text-gray-600 rounded-full text-sm font-medium transition-colors">
-                        Electronics</RouterLink>
+                        Electronics
+                    </RouterLink>
                     <RouterLink
                         class="px-4 py-2 bg-gray-50 hover:bg-green-50 hover:text-green-600 text-gray-600 rounded-full text-sm font-medium transition-colors">
-                        Fashion</RouterLink>
+                        Fashion
+                    </RouterLink>
                     <RouterLink to="/"
                         class="px-4 py-2 bg-gray-50 hover:bg-green-50 hover:text-green-600 text-gray-600 rounded-full text-sm font-medium transition-colors">
-                        Home</RouterLink>
+                        Home
+                    </RouterLink>
                     <RouterLink
                         class="px-4 py-2 bg-gray-50 hover:bg-green-50 hover:text-green-600 text-gray-600 rounded-full text-sm font-medium transition-colors">
-                        Beauty</RouterLink>
+                        Beauty
+                    </RouterLink>
                 </div>
             </div>
         </div>
