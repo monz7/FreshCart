@@ -196,7 +196,7 @@
       </nav>
       <div class="mx-4 border-t border-gray-100"></div>
       <div class="p-4 space-y-1">
-        <RouterLink to="/wishlist"
+        <RouterLink to="/wishlist" @click="isMobileMenuOpen = false"
           class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-green-50 transition-colors">
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-full bg-red-50 flex items-center justify-center">
@@ -207,7 +207,7 @@
           <span v-if="wishlist.wishlistCount > 0"
             class="bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">{{ wishlist.wishlistCount }}</span>
         </RouterLink>
-        <RouterLink class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-green-50 transition-colors"
+        <RouterLink @click="isMobileMenuOpen = false" class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-green-50 transition-colors"
           to="/CartShop">
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-full bg-green-50 flex items-center justify-center">
@@ -236,7 +236,7 @@
           <span class="font-medium text-red-600">Sign Out</span>
         </button>
       </div>
-      <RouterLink
+      <RouterLink 
         class="mx-4 mt-2 p-4 rounded-xl bg-gray-50 border border-gray-100 flex items-center gap-3 hover:bg-green-50 transition-colors"
         to="">
         <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
