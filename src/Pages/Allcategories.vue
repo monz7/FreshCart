@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        <div class="container mx-auto px-20 py-10">
+        <div class="container mx-auto px-4 py-10">
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
                 <RouterLink :to="`/categories/${category.slug}`" v-for="category in store.categories"
                     :key="category.id"
