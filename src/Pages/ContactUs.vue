@@ -1,6 +1,6 @@
 <template>
     <div class="bg-gradient-to-br from-green-600 via-green-500 to-green-300 text-white">
-        <div class="container mx-auto px-20 py-10 sm:py-14">
+        <div class="container mx-auto px-4 py-10 sm:py-14">
             <nav class="flex items-center gap-2 text-sm text-white/70 mb-6 flex-wrap">
                 <router-link to="/" class="hover:text-white hover:underline">Home</router-link>
                 <span class="text-white/40">/</span>
@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="container mx-auto px-20 py-12">
+    <div class="container mx-auto px-4 py-12">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <contact-info />
             <contact-input />

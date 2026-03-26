@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="container mx-auto px-20 py-10">
+    <div class="container mx-auto px-4 py-10">
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5">
             <router-link to="#" v-for="brand in brands" :key="brand.id"
                 class="group bg-white rounded-2xl border border-gray-100 p-4 sm:p-5 shadow-sm hover:shadow-xl hover:border-violet-200 transition-all duration-300 hover:-translate-y-1">

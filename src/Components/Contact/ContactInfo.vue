@@ -62,7 +62,7 @@
                     </a>
                     <a href="#"
                         class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-green-600 hover:text-white transition-colors">
-                       <i class="fa-brands fa-instagram"></i >
+                        <i class="fa-brands fa-instagram"></i>
                     </a>
                     <a href="#"
                         class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-green-600 hover:text-white transition-colors">
@@ -70,7 +70,7 @@
                     </a>
                 </div>
             </div>
-
+            
         </div>
 </template>
 

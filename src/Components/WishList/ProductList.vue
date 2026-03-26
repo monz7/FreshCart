@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto px-24 py-8">
+    <div class="container mx-auto px-4 py-8">
         <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">
             <div
                 class="hidden md:grid grid-cols-12 gap-4 px-6 py-4 bg-gray-50 border-b border-gray-100 text-sm font-medium text-gray-500">

@@ -1,5 +1,5 @@
 <template>
-  <div class=" lg:block text-sm border-b border-gray-100">
+  <div class="hidden lg:block text-sm border-b border-gray-100">
     <div class="container mx-auto px-4">
       <div class="flex justify-between items-center h-10">
         <div class="flex items-center gap-6 text-gray-500 ">

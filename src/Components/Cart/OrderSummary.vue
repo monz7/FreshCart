@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden sticky top-4">
+    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden sticky top-24 shadow-sm">
         <!-- Header -->
         <div v-if="authStore.isLoggedIn" class="bg-gradient-to-r from-green-600 to-green-700 px-6 py-4">
 
@@ -44,7 +44,8 @@
                 </div>
                 <div class="h-2 bg-orange-100 rounded-full overflow-hidden">
                     <div class="h-full bg-gradient-to-r from-orange-400 to-amber-400 rounded-full transition-all duration-500"
-                        :style="{ width: (totalCartPrice / 500 * 100) + '%' }"></div>
+                        :style="{ width: (totalCartPrice / 500 * 100) + '%' }">
+                    </div>
                 </div>
             </div>
             <div class="p-5 space-y-4">
@@ -73,7 +74,7 @@
                         <span class="text-sm text-gray-500 ml-1"> EGP</span>
                     </div>
                 </div>
-                <div class="pt-4 space-y-3">
+                <div class="space-y-3">
                     <button v-if="authStore.isLoggedIn && !isCheckout"
                         class="w-full flex items-center justify-center gap-2 py-3 border border-dashed border-gray-300 rounded-xl text-gray-600 hover:border-green-400 hover:text-green-600 hover:bg-green-50/50 transition-all">
                         <i class="fa-solid fa-tag"></i>

@@ -1,6 +1,6 @@
 <template>
      <div class="bg-white border-b border-gray-100">
-            <div class="container mx-auto px-24 py-8">
+            <div class="container mx-auto px-4 py-8">
                 <nav class="flex items-center gap-2 text-sm text-gray-500 mb-4">
                     <RouterLink to="/" class="hover:text-green-600 transition-colors">Home</RouterLink>
                     <span>/</span>

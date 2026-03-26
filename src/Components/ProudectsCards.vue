@@ -2,7 +2,7 @@
     <div class="flex items-center justify-center">
         <loading v-model:active="isLoading" :is-full-page="true" loader='bars' color="green" />
     </div>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 px-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
         <div v-for="product in apiData" :key="product.id"
             class="bg-white border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 ease-in-out  hover:-translate-y-2 hover:shadow-xl">
             <div class="relative">

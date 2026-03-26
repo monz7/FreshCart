@@ -1,6 +1,6 @@
 <template>
     <section class="py-16 bg-linear-to-b from-white to-gray-50">
-        <div class="container mx-auto px-28">
+        <div class="container mx-auto">
             <div class="relative">
                 <div class="bg-linear-to-br from-emerald-50 via-white to-teal-50 rounded-3xl border border-emerald-100/50 shadow-2xl shadow-emerald-500/10 overflow-hidden"
                     style="opacity: 1; transform: none;">
