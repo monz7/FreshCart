@@ -1,6 +1,6 @@
 <template>
     <loading v-model:active="isLoading" :is-full-page="true" loader='bars' color="green" />
-    <div v-if="!isCartEmpty" class="bg-gray-50 min-h-screen py-8 px-20">
+    <div v-if="!isCartEmpty" class="bg-gray-50 min-h-screen py-8">
         <div class="container mx-auto px-4">
             <CartHeader :numOfCartItems="numOfCartItems" />
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
