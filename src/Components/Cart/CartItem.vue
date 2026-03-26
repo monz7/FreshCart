@@ -1,9 +1,9 @@
 <template>
     <div class="space-y-4">
         <div
-            class="relative bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 transition-all duration-300">
+            class="relative bg-white rounded-2xl shadow-sm hover:shadow-md border my-2 border-gray-100 transition-all duration-300">
             <div class="p-4 sm:p-5">
-                <div class="flex gap-4 sm:gap-6 ">
+                <div class="flex gap-4 sm:gap-6">
                     <RouterLink to="#" class="relative shrink-0 group">
                         <div
                             class="w-28 h-28 sm:w-32 sm:h-32 rounded-xl bg-gray-50 p-3 border border-gray-100 overflow-hidden">
