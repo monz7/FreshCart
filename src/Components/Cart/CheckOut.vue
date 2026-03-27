@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gradient-to-b from-gray-50 to-white min-h-screen py-8 px-20">
+    <div class="bg-gradient-to-b from-gray-50 to-white min-h-screen py-8">
         <div class="container mx-auto px-4">
             <div class="mb-8 mx-4">
                 <nav class="flex items-center gap-2 text-sm text-gray-500 mb-6">

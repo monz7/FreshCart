@@ -153,7 +153,8 @@
     </div>
   </div>
   <!-- Phone VIEW -->
-  <div v-if="isMobileMenuOpen" @click="isMobileMenuOpen = false" class="fixed inset-0 bg-black/50 z-50 lg:hidden transition-opacity duration-300 opacity-100">
+  <div v-if="isMobileMenuOpen" @click="isMobileMenuOpen = false"
+    class="fixed inset-0 bg-black/50 z-50 lg:hidden transition-opacity duration-300 opacity-100">
     <div @click.stop
       class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transition-transform duration-300 overflow-y-auto translate-x-0">
       <div class="flex items-center justify-between p-4 border-b border-gray-100 bg-gray-50/50">
@@ -206,7 +207,8 @@
           <span v-if="wishlist.wishlistCount > 0"
             class="bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">{{ wishlist.wishlistCount }}</span>
         </RouterLink>
-        <RouterLink @click="isMobileMenuOpen = false" class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-green-50 transition-colors"
+        <RouterLink @click="isMobileMenuOpen = false"
+          class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-green-50 transition-colors"
           to="/CartShop">
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-full bg-green-50 flex items-center justify-center">
@@ -215,24 +217,36 @@
             <span class="font-medium text-gray-700">Cart</span>
           </div>
           <span v-if="cartStore.numOfCartItems > 0"
-            class="bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">{{ cartStore.numOfCartItems }}</span>
+            class="bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">{{ cartStore.numOfCartItems
+            }}</span>
         </RouterLink>
       </div>
       <div class="mx-4 border-t border-gray-100"></div>
-      <div class="p-4 space-y-1"><a
-          class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-green-50 transition-colors" href="/profile">
+      <div class="p-4 space-y-1">
+        <RouterLink to="account" v-if="authStore.isLoggedIn"
+          class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-green-50 transition-colors">
           <div class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center">
             <i class="fa-regular fa-user text-gray-500"></i>
           </div>
           <span class="font-medium text-gray-700">{{ authStore.user?.name }}</span>
-        </a>
-        <button @click="authStore.loggout"
+        </RouterLink>
+        <button v-if="authStore.isLoggedIn" @click="authStore.loggout"
           class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 transition-colors w-full text-left">
           <div class="w-9 h-9 rounded-full bg-red-50 flex items-center justify-center">
             <i class="fa-solid fa-right-from-bracket  text-red-500"></i>
           </div>
           <span class="font-medium text-red-600">Sign Out</span>
         </button>
+        <div v-else class="p-4 space-y-1">
+          <div  class="grid grid-cols-2 gap-3 pt-2">
+            <RouterLink to="/login"
+              class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors">
+              Sign In</RouterLink>
+            <RouterLink to="/register"
+              class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border-2 border-green-600 text-green-600 font-semibold hover:bg-green-50 transition-colors">
+              Sign Up</RouterLink>
+          </div>
+        </div>
       </div>
       <RouterLink to="contact" @click="isMobileMenuOpen = false"
         class="mx-4 mt-2 p-4 rounded-xl bg-gray-50 border border-gray-100 flex items-center gap-3 hover:bg-green-50 transition-colors">
@@ -255,7 +269,7 @@ import { onBeforeUnmount, onMounted, ref } from 'vue';
 const authStore = useAuthStore()
 const cartStore = useCartStore()
 const wishlist = useWishlistStore()
-const isMobileMenuOpen=ref(false)
+const isMobileMenuOpen = ref(false)
 const isOpen = ref(false)
 const dropdownRef = ref(null)
 function handelClickUser(event) {
