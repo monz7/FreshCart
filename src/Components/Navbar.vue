@@ -112,7 +112,6 @@
                     <p class="text-xs text-gray-400 truncate">{{ authStore.user?.email }}</p>
                   </div>
                 </div>
-
               </div>
               <div class="py-2">
                 <ul>
@@ -216,8 +215,7 @@
             <span class="font-medium text-gray-700">Cart</span>
           </div>
           <span v-if="cartStore.numOfCartItems > 0"
-            class="bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">{{ cartStore.numOfCartItems
-            }}</span>
+            class="bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">{{ cartStore.numOfCartItems }}</span>
         </RouterLink>
       </div>
       <div class="mx-4 border-t border-gray-100"></div>
@@ -236,9 +234,8 @@
           <span class="font-medium text-red-600">Sign Out</span>
         </button>
       </div>
-      <RouterLink 
-        class="mx-4 mt-2 p-4 rounded-xl bg-gray-50 border border-gray-100 flex items-center gap-3 hover:bg-green-50 transition-colors"
-        to="">
+      <RouterLink to="contact" @click="isMobileMenuOpen = false"
+        class="mx-4 mt-2 p-4 rounded-xl bg-gray-50 border border-gray-100 flex items-center gap-3 hover:bg-green-50 transition-colors">
         <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
           <i class="fa-solid fa-headset text-green-600"></i>
         </div>
