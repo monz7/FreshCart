@@ -1,5 +1,5 @@
 <template>
-  <nav aria-label="Breadcrumb" class="py-4 px-20">
+  <nav aria-label="Breadcrumb" class="py-4">
     <div class="container mx-auto px-4">
       <ol class="flex items-center flex-wrap gap-1 text-sm">
         <li class="flex items-center">
@@ -29,7 +29,7 @@
       </ol>
     </div>
   </nav>
-  <section id="product-detail" class="py-6 px-20">
+  <section id="product-detail" class="py-6">
     <div class="container mx-auto px-4">
       <div class="flex flex-col lg:flex-row gap-8">
         <div id="product-images" class="lg:w-1/4">
@@ -170,7 +170,7 @@
     </div>
   </section>
 
-  <section id="product-details-tabs" class="py-8  px-20">
+  <section id="product-details-tabs" class="py-8">
     <div class="container mx-auto px-4">
       <div class="bg-white rounded-lg shadow-sm overflow-hidden">
         <div class="border-b border-gray-200">
